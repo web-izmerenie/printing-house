@@ -1,0 +1,60 @@
+@import '../mixins';
+@import '../variables';
+
+.tipograpthy {
+    padding-left: 63px;
+
+    .detail {
+        color: #000000;
+        font: 400 14px / 22px Ubuntu;
+
+        h2 {
+            color: #000000;
+            font: 700 20px / 24px Ubuntu;
+            padding: 25px 0;
+        }
+
+        @media screen and (max-width: 1285px) {
+            img { width: 95% !important; }
+        }
+
+        img {
+            width: 100%;
+            margin: 0px auto 33px;
+            display: block;
+            position: relative;
+            left: -33px;
+        }
+
+        h3 {
+            color: #000000;
+            font: 700 14px / 22px Ubuntu;
+            text-transform: uppercase;
+            margin: 21px 0;
+        }
+
+        ul li {
+            list-style: none;
+            color: #000000;
+            font: 400 15px / 24px Ubuntu;
+            width: 460px;
+            position: relative;
+            padding-left: 22px;
+			padding-bottom: 5px;
+
+            &:before {
+                content: '—';
+                position: absolute;
+                left: 0;
+            }
+        }
+
+        h4 {
+            margin-top: 29px;
+            color: #8e351e;
+            font: 700 20px / 22px Ubuntu;
+            text-transform: uppercase;
+        }
+    }
+}
+//tipograpthy

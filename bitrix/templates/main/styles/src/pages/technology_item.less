@@ -1,0 +1,58 @@
+@import '../mixins';
+@import '../variables';
+
+.technologi_item {
+    h1 { margin-top: 0 !important; }
+
+    .make {
+        width: 928px;
+        margin-top: -5px;
+        margin-bottom: 50px;
+
+        h2 {
+            color: #000000;
+            font: 700 20px Ubuntu;
+            text-transform: uppercase;
+            margin-bottom: 48px;
+        }
+
+        ul li {
+            color: #000000;
+            font: 400 15.67px / 19px Ubuntu;
+            text-transform: uppercase;
+            display: inline-block;
+            width: 186px;
+            margin-right: 40px;
+            vertical-align: top;
+
+            a {
+                text-decoration: none;
+                display: block;
+
+                &:hover {
+                    color: #F15F39;
+
+                    .svg { stroke: #F15F39; }
+                }
+
+                .svg {
+                    stroke: #000;
+                    max-height: 68px;
+                    min-height: 43px;
+                    width: 80px;
+                    margin-bottom: 5px;
+                    display: block;
+                }
+
+                p {
+                    color: #5e5e5e;
+                    font: 400 12px / 16px Ubuntu;
+                    text-transform: none;
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
+    //make
+}
+//technologi_item
