@@ -30,6 +30,16 @@ $(function () {
 			]
 		});
 	}
+	
+	function ankorAnimate(){
+		$('a[href="#up"]').click(function(event) {
+			event.preventDefault();
+			var top=$('html').offset().top;
+			$('html,body').animate({
+			scrollTop: top
+			}, 1000);
+		});
+	}
 
 	//
 	resizeMainPage();
@@ -37,6 +47,7 @@ $(function () {
 		resizeMainPage();
 	});
 	sliderProduct();
+	ankorAnimate();
 
 	//init plugins
 	$('#main-slider ul').slick({
