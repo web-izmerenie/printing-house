@@ -1,10 +1,10 @@
 <?
 $arUrlRewrite = array(
 	array(
-		"CONDITION" => "#^/news/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/news/index.php",
+		"CONDITION" => "#^/tekhnologii/(.*?).html(\\?.*\$|\$)#",
+		"RULE" => "&ELEMENT_CODE=\$1",
+		"ID" => "",
+		"PATH" => "/tekhnologii/detail.php",
 	),
 );
 

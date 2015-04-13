@@ -7,6 +7,8 @@ if(defined('tipograpthy'))
 	$html_classes = array('tipograpthy');
 if(!defined('no_content_block'))
 	$main_classes = array('content-block');
+if(defined('technologi_item'))
+	$html_classes = array('technologi_item');
 
 $html_classes = implode(" ", $html_classes);
 $main_classes = implode(" ", $main_classes);
