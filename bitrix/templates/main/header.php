@@ -3,6 +3,11 @@ $html_classes = array();
 $main_classes = array();
 // <html> classes
 
+if(defined('tipograpthy'))
+	$html_classes = array('tipograpthy');
+if(!defined('no_content_block'))
+	$main_classes = array('content-block');
+
 $html_classes = implode(" ", $html_classes);
 $main_classes = implode(" ", $main_classes);
 
@@ -73,4 +78,4 @@ $tplPath = "/bitrix/templates/main/";
 		</header>
 		<!-- .header-->
 
-		<main class="content">
+		<main class="content <?=$main_classes;?>">

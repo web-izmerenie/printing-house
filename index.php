@@ -1,4 +1,7 @@
-<?require($_SERVER[ "DOCUMENT_ROOT"]. "/bitrix/header.php"); $APPLICATION->SetTitle("Печатный двор");?><?$APPLICATION->IncludeComponent(
+<?define('no_content_block', 'Y');
+require($_SERVER[ "DOCUMENT_ROOT"]. "/bitrix/header.php"); 
+$APPLICATION->SetTitle("Печатный двор");?>
+<?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"main-slider",
 	Array(
