@@ -40,8 +40,7 @@ $(function () {
 			}, 1000);
 		});
 	}
-
-	//
+	
 	resizeMainPage();
 	$(window).resize(function () {
 		resizeMainPage();

@@ -9,6 +9,8 @@ if(!defined('no_content_block'))
 	$main_classes = array('content-block');
 if(defined('technologi_item'))
 	$html_classes = array('technologi_item');
+if(defined('contacts'))
+	$html_classes = array('contacts');
 
 $html_classes = implode(" ", $html_classes);
 $main_classes = implode(" ", $main_classes);
