@@ -11,7 +11,6 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);?>
-<h1><?=$arResult["NAME"];?></h1>
 <section class="prewiev-text">
 	<?=$arResult["DETAIL_TEXT"];?>
 </section>

@@ -81,3 +81,15 @@ $tplPath = "/bitrix/templates/main/";
 		<!-- .header-->
 
 		<main class="content <?=$main_classes;?>">
+			<?if(defined("breadcrumb")){?>
+				<?$APPLICATION->IncludeComponent(
+					"bitrix:breadcrumb",
+					"breadcrumb",
+					Array(
+						"START_FROM" => "0",
+						"PATH" => "",
+						"SITE_ID" => "-"
+					)
+				);?>
+			<?}?>
+		<?if(!defined('no_content_block')){?><h1><?$APPLICATION->ShowTitle(false)?></h1><?}?>

@@ -11,7 +11,6 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);?>
-<h1><?=$arResult['NAME'];?></h1>
 <section class="prewiev-text">
 	<?=$arResult['PREVIEW_TEXT'];?>
 </section>
@@ -21,7 +20,7 @@ $this->setFrameMode(true);?>
 </section>
 <section class="portfolio-module">
 	<?foreach($arResult['PORFOLIO_PHOTO'] as $photo){
-	$resizePhoto = CFile::ResizeImageGet($photo, array('width'=>500, 'height'=>450), BX_RESIZE_IMAGE_PROPORTIONAL, true); 
+	$resizePhoto = CFile::ResizeImageGet($photo, array('width'=>500, 'height'=>450), BX_RESIZE_IMAGE_PROPORTIONAL, true);
 	?>
 		<img src="<?=$resizePhoto['src'];?>">
 	<?}?>
