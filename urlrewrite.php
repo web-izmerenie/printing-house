@@ -6,6 +6,12 @@ $arUrlRewrite = array(
 		"ID" => "",
 		"PATH" => "/tekhnologii/detail.php",
 	),
+	array(
+		"CONDITION" => "#^/produktsiya/(.+?)/(\\?|\$)#",
+		"RULE" => "SECTION_CODE=\$1&",
+		"ID" => "",
+		"PATH" => "/produktsiya/index.php",
+	),
 );
 
 ?>

@@ -25,3 +25,4 @@ $this->setFrameMode(true);?>
 		<img src="<?=$resizePhoto['src'];?>">
 	<?}?>
 </section>
+<pre><?print_r($resizePhoto);?></pre>

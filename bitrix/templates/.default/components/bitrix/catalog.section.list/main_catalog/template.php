@@ -19,7 +19,7 @@ $sections = array_slice($arResult['SECTIONS'], 0, 16);
 			<?foreach($sections as $arItem){?>
 				<li>
 					<a href="<?=$arItem['SECTION_PAGE_URL'];?>">
-						<img class="svg" src="<?=CFile::GetPath($arItem['UF_ICON'])?>"><span><?=$arItem['NAME'];?></span>
+						<img class="svg" src="<?=$arItem['ICON_PATH']?>"><span><?=$arItem['NAME'];?></span>
 					</a>
 				</li>
 			<?}?>
@@ -27,4 +27,3 @@ $sections = array_slice($arResult['SECTIONS'], 0, 16);
 		<a class="button1" href="/produktsiya/"><span>Вся продукция</span></a>
 	</section>
 <?}?>
-

@@ -94,4 +94,4 @@ $tplPath = "/bitrix/templates/main/";
 					)
 				);?>
 			<?}?>
-		<?if(!defined('no_content_block')){?><h1><?$APPLICATION->ShowTitle(false)?></h1><?}?>
+		<?if(!defined('no_content_block')){?><h1><?$APPLICATION->ShowTitle()?></h1><?}?>
