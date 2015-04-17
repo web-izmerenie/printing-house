@@ -26,8 +26,8 @@ $this->setFrameMode(true);?>
 	<ul>
 		<?foreach($arResult["ATT_SECTIONS"] as $arItem){?>
 		<li>
-			<a href="#"><img class="svg" src="<?=$arItem["ICON_PATH"];?>"><?=$arItem["NAME"];?>
-				<p><?=$arItem["DESCRIPTION"];?></p>
+			<a href="<?=$arItem["SECTION_PAGE_URL"]?>"><img class="svg" src="<?=$arItem["ICON_PATH"];?>"><?=$arItem["NAME"];?>
+				<p><?=$arItem["UF_TEXT"];?></p>
 			</a>
 		</li>
 		<?}?>
