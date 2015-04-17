@@ -1,7 +1,16 @@
 <?
+$URI = substr($_SERVER['REQUEST_URI'],0,strpos($_SERVER['REQUEST_URI'],'?'));
+
+if($URI == '/produktsiya/' or $_SERVER['REQUEST_URI'] == '/produktsiya/'){
+	define("production_view", "Y");
+}else{
+	define("breadcrumb", "Y");
+	define("production", "Y");
+}
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Продукция");
-?><a href="#" class="technical_require">Тех. требования</a><?$APPLICATION->IncludeComponent(
+?><a href="#" class="technical_require">Тех. требования</a>
+<?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list", 
 	"catalog_sections", 
 	array(
@@ -27,7 +36,8 @@ $APPLICATION->SetTitle("Продукция");
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "36000000",
 		"CACHE_GROUPS" => "Y",
-		"ADD_SECTIONS_CHAIN" => "Y"
+		"ADD_SECTIONS_CHAIN" => "N"
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

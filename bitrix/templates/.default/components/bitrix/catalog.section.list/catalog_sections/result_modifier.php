@@ -18,9 +18,8 @@ foreach($arResult['SECTIONS'] as $key => $sections){
 	$arResult["SECTIONS"][$key]["ICON_PATH"] = CFile::GetPath($sections['UF_ICON']);
 
 	if($arResult['SECTION']['ID'] == $sections['ID']){
-		foreach($sections["UF_PORTFOLIO"] as $k => $portolio){
-			$arResult["SECTION"]["PORTFOLIO"][$k]["ID"] = $portolio;
-			$arResult["SECTION"]["PORTFOLIO"][$k]["SRC"] = CFile::GetPath($portolio);
+		foreach($sections["UF_PORTFOLIO"] as $portolio){
+			$arResult["SECTION"]["PORTFOLIO"][] = CFile::GetFileArray($portolio);
 		}
 	}
 }

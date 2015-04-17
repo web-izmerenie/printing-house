@@ -11,6 +11,8 @@ if(defined('technologi_item'))
 	$html_classes = array('technologi_item');
 if(defined('contacts'))
 	$html_classes = array('contacts');
+if(defined('production'))
+	$html_classes = array('production');
 
 $html_classes = implode(" ", $html_classes);
 $main_classes = implode(" ", $main_classes);
