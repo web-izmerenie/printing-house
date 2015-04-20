@@ -18,9 +18,14 @@ if (!empty($arResult['ITEMS']))
 		<ul>
 			<?foreach($arResult["ITEMS"] as $arItem){?>
 				<li>
-					<a href="<?=$arItem["DETAIL_PAGE_URL"];?>"><img class="svg" src="<?=$arItem["ICON"]["SRC"];?>" class="svg">
-						<?=$arItem["NAME"];?>
-						<p><?=$arItem["PREVIEW_TEXT"];?></p>
+					<a href="<?=$arItem["DETAIL_PAGE_URL"];?>">
+						<div class="img">
+							<img class="svg" src="<?=$arItem["ICON"]["SRC"];?>" class="svg">
+						</div>
+						<div class="text">
+							<?=$arItem["NAME"];?>
+							<p><?=$arItem["PREVIEW_TEXT"];?></p>
+						</div>
 					</a>
 				</li>
 			<?}?>

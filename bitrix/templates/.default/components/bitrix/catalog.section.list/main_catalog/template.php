@@ -19,7 +19,10 @@ $sections = array_slice($arResult['SECTIONS'], 0, 16);
 			<?foreach($sections as $arItem){?>
 				<li>
 					<a href="<?=$arItem['SECTION_PAGE_URL'];?>">
-						<img class="svg" src="<?=$arItem['ICON_PATH']?>"><span><?=$arItem['NAME'];?></span>
+						<div class="img">
+							<img class="svg" src="<?=$arItem['ICON_PATH']?>">
+						</div>
+						<span><?=$arItem['NAME'];?></span>
 					</a>
 				</li>
 			<?}?>
