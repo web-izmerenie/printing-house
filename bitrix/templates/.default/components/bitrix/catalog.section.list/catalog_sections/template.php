@@ -13,7 +13,6 @@
 $this->setFrameMode(true);?>
 <?$APPLICATION->SetPageProperty("title", $arResult["SECTION"]["NAME"]);?>
 
-<section class=<?if($arResult["SECTION"]["DEPTH_LEVEL"] == 0){?>"production_view"<?}else{?>"production"<?}?>>
 	<?if($arResult["SECTION"]["DEPTH_LEVEL"] != 0 or !empty($arResult["SECTION"]["PATH"]["0"]["DESCRIPTION"])){?>
 		<section class="prewiev-text">
 			<?=$arResult["SECTION"]["PATH"]["0"]["DESCRIPTION"]?>
@@ -28,7 +27,7 @@ $this->setFrameMode(true);?>
 							<a href="<?=$arItem['SECTION_PAGE_URL'];?>">
 								<div class="img">
 									<img class="svg" src="<?=$arItem['ICON_PATH']?>">
-								</div>	
+								</div>
 								<div class="text">
 									<span><?=$arItem['NAME'];?></span>
 									<p><?=$arItem['UF_TEXT']?></p>
@@ -37,6 +36,13 @@ $this->setFrameMode(true);?>
 						</li>
 					<?}?>
 			</ul>
+		</section>
+		<?$randPortfolio = array_rand($arResult["PORTFOLIO_RANDOM"], 1);?>
+		<section class="portfolio-module">
+			<?foreach($arResult["PORTFOLIO_RANDOM"][$randPortfolio]["PORTFOLIO"] as $imgPortfolio){
+			$resizePhoto = CFile::ResizeImageGet($imgPortfolio, array('width'=>1024, 'height'=>768), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>
+				<img src="<?=$resizePhoto["src"];?>">
+			<?}?>
 		</section>
 	<?}?>
 
@@ -122,4 +128,3 @@ $this->setFrameMode(true);?>
 				<?}?>
 			</section>
 		<?}?>
-</section>

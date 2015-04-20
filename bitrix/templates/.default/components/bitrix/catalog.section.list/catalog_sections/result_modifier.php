@@ -17,10 +17,18 @@ while($arSection = $rsSections->GetNext())
 foreach($arResult['SECTIONS'] as $key => $sections){
 	$arResult["SECTIONS"][$key]["ICON_PATH"] = CFile::GetPath($sections['UF_ICON']);
 
-	if($arResult['SECTION']['ID'] == $sections['ID']){
-		foreach($sections["UF_PORTFOLIO"] as $portolio){
+	foreach($sections["UF_PORTFOLIO"] as $portolio){
+		if($arResult['SECTION']['ID'] == $sections['ID']){
 			$arResult["SECTION"]["PORTFOLIO"][] = CFile::GetFileArray($portolio);
 		}
+		$arResult["SECTIONS"][$key]["PORTFOLIO"][] = CFile::GetFileArray($portolio);
 	}
+}
+
+foreach($arResult["SECTIONS"] as $arPortfolio){
+
+	if(!isset($arPortfolio["PORTFOLIO"])) continue;
+
+	$arResult["PORTFOLIO_RANDOM"][] = $arPortfolio;
 }
 
