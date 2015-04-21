@@ -17,7 +17,7 @@
 		</section>
 		</footer>
 		<!-- .footer -->
-
+		<div class="overlay"></div>
 	</body>
 
 </html>

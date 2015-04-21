@@ -5,8 +5,14 @@ var minifyCSS = require('gulp-minify-css');
 var rename = require("gulp-rename");
 var less = require("gulp-less");
 var autoprefixer = require('gulp-autoprefixer');
+var clean = require('gulp-clean');
 
-gulp.task('default', function () {
+gulp.task('clean', function () {
+  return gulp.src('bitrix/templates/main/styles/build/*', {read: false})
+    .pipe(clean());
+});
+
+gulp.task('default', ['clean'], function () {
 	gulp.src('bitrix/templates/main/styles/src/**/*.less')
 		.pipe(less())
 		.pipe(concat('common.css'))
@@ -17,5 +23,5 @@ gulp.task('default', function () {
 });
 
 gulp.task('watch', function(){
-	gulp.watch('bitrix/templates/main/styles/src/**', ['default'])
+	gulp.watch('bitrix/templates/main/styles/src/**/*', ['default']);
 });

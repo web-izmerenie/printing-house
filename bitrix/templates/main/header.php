@@ -34,6 +34,8 @@ $tplPath = "/bitrix/templates/main/";
 	<script src="<?=$tplPath;?>scripts/libs/jquery.inlinesvg.js"></script>
 	<script src="<?=$tplPath;?>scripts/libs/jquery.removeWhitespace.js"></script>
 	<script src="<?=$tplPath;?>scripts/libs/jquery.collagePlus.js"></script>
+	<script src="<?=$tplPath;?>scripts/libs/jquery.formstyler.min.js"></script>
+	<script src="<?=$tplPath;?>scripts/libs/jquery.maskedinput.min.js"></script>
 	<script src="<?=$tplPath;?>scripts/main.js"></script>
 </head>
 

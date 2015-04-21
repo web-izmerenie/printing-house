@@ -1,0 +1,159 @@
+@import '../variables';
+@import '../mixins';
+
+form{background: #e1d2b4;}
+
+.close{
+	display: block;
+	.bg('close.png', no-repeat 0 0);
+	width: 22px;
+	height: 21px;
+	
+	&:hover{
+		background-position: 0 -23px;
+	}
+}//close
+
+.form-order, #call-me{
+	display: none;
+	@width: 660px;
+	@height: 555px;
+	@padding-Y: 20px;
+	@padding-X: 60px;
+	
+	position: fixed;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	height: @height - (@padding-Y * 2);
+	width: @width - @padding-X;
+	z-index: 999;
+	padding: @padding-Y 0 @padding-Y @padding-X;
+	
+	h1{
+		font: 700 28px Ubuntu;
+		text-align: center;
+		padding-top: 16px;
+		padding-bottom: 32px;
+		text-transform: uppercase;
+		margin-left: -65px;
+	}
+	
+	.close{
+		position: absolute;
+		top: 20px;
+		right: 17px;
+	}//close
+	
+	.form-items > li{
+		display: inline-block;
+		vertical-align: top;
+		margin-bottom: 6px;
+		
+		&:nth-child(7){
+			position: relative;
+			top: -145px;
+		}
+		
+		&:nth-child(2n + 1){
+			margin-right: 25px;
+		}
+	}
+	
+	input[type="text"], textarea, select, input[type="email"], .jq-selectbox__select{
+		@width: 200px;
+		@padding-left: 10px;
+		
+		border: none;
+		width: @width;
+		height: 35px;
+		padding-left: @padding-left;
+		color: #000;
+		font: 400 16px Ubuntu;
+		border: 2px solid #e1d2b4;
+		background: #fff;
+		text-transform: uppercase;
+		
+		&:hover{
+			border: 2px solid #f15f39;
+		}
+		
+		&:focus{
+			background: #f15f39;
+			color: #fff;
+		}
+		&:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 1s ease;};
+		&:focus::-moz-placeholder          {opacity: 0; transition: opacity 1s ease;};
+		&:focus:-moz-placeholder           {opacity: 0; transition: opacity 1s ease;};
+		&:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 1s ease;};
+	}
+	
+	textarea{
+		resize: none;
+		width: 284px;
+		height: 168px;
+		padding-top: 10px;
+	}
+	
+	p{
+		color: #8e351e;
+		font: 400 14px / 20px Ubuntu;
+		width: 210px;
+		margin-top: -41px;
+	}
+	
+	input[type="submit"]{
+		@width: 240px;
+		
+		color: #fff;
+		text-transform: uppercase;
+		font: 700 20px Ubuntu;
+		text-align: center;
+		display: block;
+		width: @width;
+		height: 63px;
+		background: #8e351e;
+		border: none;
+		cursor: pointer;
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		margin-left: -@width / 2;
+		
+		&:hover{
+			background: #F15F39;
+		}
+	}
+	
+}//form-order
+
+#call-me{
+	@height: 280px;
+	@width: 405px;
+	
+	width: @width;
+	height: @height;
+	padding: 0;
+	
+	.close{
+		top:13px;
+		right: 14px;
+	}
+	
+	h1{
+		margin: 0;
+		padding: 25px 0;
+	}
+	
+	ul{
+		display: block;
+		width: 214px;
+		list-style: none;
+		margin: 0 auto;
+		li{
+			margin-bottom: 10px;
+		}
+	}
+}//call-me

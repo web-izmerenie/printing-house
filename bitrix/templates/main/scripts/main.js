@@ -1,4 +1,19 @@
 $(function () {
+	
+	function OpenWindow(){
+		$('.module-window').click(function(event){
+			event.preventDefault();
+			var target = $(this).attr('href');
+			$('.overlay').fadeIn();
+			$(target).show().removeClass('fadeOutDownBig').addClass('animated fadeInDownBig');
+		});
+	}
+	
+	function CloseWindow(){
+		$('.overlay').hide();
+		$('.animated').addClass('fadeOutDownBig').fadeOut('2000');
+	}
+	
 	function resizeMainPage() {
 		var mainBlock = $('#main-text').width();
 		var rightBlock = $('#main-text .contacts').outerWidth();
@@ -47,6 +62,13 @@ $(function () {
 	});
 	sliderProduct();
 	ankorAnimate();
+	OpenWindow();
+	$('.close').click(function(){
+		CloseWindow();
+	});
+	$('.overlay').click(function(){
+		CloseWindow();
+	});
 
 	//init plugins
 	$('#main-slider ul').slick({
@@ -75,5 +97,8 @@ $(function () {
 			'targetHeight': 350
 		});
 	}
+	
+	$('select').styler();
+	$('input[name="phone"]').mask("+7 (999) 999-9999");
 
 });

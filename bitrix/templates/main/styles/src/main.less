@@ -9,6 +9,7 @@
 @import 'pages/production_view';
 @import 'pages/contacts';
 @import 'pages/production';
+@import 'pages/form';
 
 * {
     margin: 0;
@@ -24,6 +25,18 @@ html {
         font: 12px/18px Arial, sans-serif;
         height: 100%;
         background: #f8f6f1;
+		
+		.overlay{
+			background: rgba(0, 0, 0, 0.5);
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+			display: none;
+			z-index: 998;
+		}
 
         a {
             color: #000;

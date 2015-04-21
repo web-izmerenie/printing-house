@@ -18,7 +18,16 @@ $this->setFrameMode(true);
 			<a class="tel" href="tel:<?=$arItem['PROPERTIES']['ATT_MAIN_TEL']['VALUE']?>"><?=$arItem['PROPERTIES']['ATT_MAIN_TEL']['VALUE']?></a>
 			<a class="adress" href="/kontakty/"><span><?=$arItem['PROPERTIES']['ATT_MAIN_ADRES']['VALUE']?></span></a>
 		<?}?>
-		<a class="call-me" href="#call-me"><span>Перезвоните мне</span></a>
+		<a class="call-me module-window" href="#call-me"><span>Перезвоните мне</span></a>
 	</div>
+	<form id="call-me">
+		<a class="close" href="#close"></a>
+		<h1>Обратный звонок</h1>
+		<ul>
+			<li><input type="text" placeholder="Имя"></li>
+			<li><span></span><input type="text" name="phone" placeholder="Номер телефона"></li>
+		</ul>
+		<input type="submit" value="Перезвоните мне">
+	</form>
 <?}?>
 

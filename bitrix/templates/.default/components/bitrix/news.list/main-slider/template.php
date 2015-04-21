@@ -16,9 +16,10 @@ $this->setFrameMode(true);
 <?if(!empty($arResult['ITEMS'])){?>
 	<section id="main-slider">
 		<ul>
-			<?foreach($arResult['ITEMS'] as $arItem){?>
+			<?foreach($arResult['ITEMS'] as $arItem){
+			$resizePhoto = CFile::ResizeImageGet($arItem['PREVIEW_PICTURE'], array('width'=>1280, 'height'=>595), BX_RESIZE_IMAGE_EXACT, true);?>
 			<li>
-				<img src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" width="100%" title="$arItem['PREVIEW_PICTURE']['TITLE']">
+				<img src="<?=$resizePhoto['src'];?>" width="100%" title="<?=$arItem['PREVIEW_PICTURE']['TITLE'];?>">
 				<div class="text">
 					<h1><?=$arItem['NAME'];?></h1>
 					<p><?=$arItem['PREVIEW_TEXT']?></p>
