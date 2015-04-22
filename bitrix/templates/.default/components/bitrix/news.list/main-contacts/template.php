@@ -24,7 +24,7 @@ $this->setFrameMode(true);
 		<a class="close" href="#close"></a>
 		<h1>Обратный звонок</h1>
 		<ul>
-			<li><input type="text" placeholder="Имя"></li>
+			<li><input type="text" name="name" placeholder="Имя"></li>
 			<li><span></span><input type="text" name="phone" placeholder="Номер телефона"></li>
 		</ul>
 		<input type="submit" value="Перезвоните мне">

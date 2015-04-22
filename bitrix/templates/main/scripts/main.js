@@ -56,6 +56,46 @@ $(function () {
 		});
 	}
 	
+	function formCall(){
+		$('#call-me input').click(function(){
+			$(this).removeClass('error-input');
+			$('.error').fadeOut(1000).remove();
+		});
+		
+        $('#call-me').submit(function(event){
+            var error = false;
+            var inputText = $(this).find("input[type=text]");
+			
+            inputText.each(function(){
+                if($(this).val() === ''){
+                    error = true;
+					$(this).addClass('error-input');
+                	$(this).after('<span class="error">Вы не ввели ' +$(this).attr('placeholder') + '</span>');
+					$('.error').fadeIn(1000).css({'display':'block'});
+					
+				}
+            });
+			 
+            if(error){
+                event.preventDefault();
+            }else{
+                $.ajax({
+                        type: "POST",
+                        url: '/ajax/call_me.php',
+                        data: $(this).serialize()
+                    }).done(function() {
+                        $('#call-me').find(".error").remove();
+						$('#call-me').animate({'height': '165px'}, 1000);
+                        $('#call-me').find('h1').after("<div id='sucsess' class='animated zoomIn'>В течении минуты наш</br> менеджер перезвонит вам</div>");
+                        $('#call-me').find('input').hide();
+                        $('#call-me').find("input").val("");
+                        $('#call-me').trigger("reset");
+                    });
+                    return false;
+            }
+        });
+    }
+	
 	resizeMainPage();
 	$(window).resize(function () {
 		resizeMainPage();
@@ -69,6 +109,7 @@ $(function () {
 	$('.overlay').click(function(){
 		CloseWindow();
 	});
+	formCall();
 
 	//init plugins
 	$('#main-slider ul').slick({

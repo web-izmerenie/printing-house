@@ -1,8 +1,6 @@
 @import '../variables';
 @import '../mixins';
 
-form{background: #e1d2b4;}
-
 .close{
 	display: block;
 	.bg('close.png', no-repeat 0 0);
@@ -22,6 +20,7 @@ form{background: #e1d2b4;}
 	@padding-X: 60px;
 	
 	position: fixed;
+	background: #e1d2b4;
 	margin: auto;
 	left: 0;
 	right: 0;
@@ -127,6 +126,30 @@ form{background: #e1d2b4;}
 		}
 	}
 	
+	.error-input{
+		border: 2px solid #CF2B00 !important;
+		transition: border 2s ease;
+	}
+	
+	.error{
+		display: none;
+		color: #fff;
+		font: 400 12px Ubuntu;
+		text-align: center;
+		margin: auto;
+		background: #CF2B00;
+		padding: 10px 20px;
+		position: absolute;
+		z-index: 999;
+		left: 0;
+		right: 0;
+	}
+	
+	#sucsess{
+		text-align: center;
+		font: 400 16px / 1.5 Ubuntu;
+	}
+	
 }//form-order
 
 #call-me{
@@ -154,6 +177,7 @@ form{background: #e1d2b4;}
 		margin: 0 auto;
 		li{
 			margin-bottom: 10px;
+			position: relative;
 		}
 	}
 }//call-me
