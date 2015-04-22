@@ -6,8 +6,14 @@
 				<?foreach($arResult as $arItem){?>
 					<li>
 						<a href="<?=$arItem['LINK'];?>" <?if(!empty($arItem[ 'SELECTED'])){?>class="selected"<?}?>>
-					<?=$arItem['TEXT'];?>
-				</a>
+						<?=$arItem['TEXT'];?></a>
+						<?if (!empty($arItem["CHILDREN"])):?>
+							<ul class="inside-menu">
+								<?foreach($arItem["CHILDREN"] as $arItemChild):?>
+									<li><a href="<?=$arItemChild["LINK"]?>"><?=$arItemChild["TEXT"]?></a></li>
+								<?endforeach?>
+							</ul>
+						<?endif?>
 					</li>
 					<?}?>
 			</ul>

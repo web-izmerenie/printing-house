@@ -96,6 +96,28 @@ $(function () {
         });
     }
 	
+	function menu(){
+		$('#main ul li').hover(function () {
+				clearTimeout($.data(this,'timer'));
+				$('ul',this).stop(true,true).show().removeClass('flipOutX').addClass('animated flipInX');
+			}, function () {
+				$.data(this,'timer', setTimeout($.proxy(function() {
+				$('ul',this).stop(true,true).removeClass('flipInX').addClass('flipOutX');
+			}, this), 100));
+		});
+	}
+	
+	function mobileMenu(){
+		$('#main ul li').hover(function () {
+				clearTimeout($.data(this,'timer'));
+				$('ul',this).stop(true,true).show().slideDown(300);
+			}, function () {
+				$.data(this,'timer', setTimeout($.proxy(function() {
+				$('ul',this).stop(true,true).slideUp(300);
+			}, this), 100));
+		});
+	}
+	
 	resizeMainPage();
 	$(window).resize(function () {
 		resizeMainPage();
@@ -103,13 +125,19 @@ $(function () {
 	sliderProduct();
 	ankorAnimate();
 	OpenWindow();
-	$('.close').click(function(){
+	$('.close').click(function(e){
+		e.preventDefault();
 		CloseWindow();
 	});
 	$('.overlay').click(function(){
 		CloseWindow();
 	});
 	formCall();
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		mobileMenu();
+	}else{
+		menu();
+	}
 
 	//init plugins
 	$('#main-slider ul').slick({

@@ -68,20 +68,24 @@ $tplPath = "/bitrix/templates/main/";
 					),
 					false
 				);?>
-				<?$APPLICATION->IncludeComponent("bitrix:menu", "main-menu", Array(
-					"ROOT_MENU_TYPE" => "main",	// Тип меню для первого уровня
-						"MENU_CACHE_TYPE" => "N",	// Тип кеширования
-						"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
-						"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
-						"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
-						"MAX_LEVEL" => "1",	// Уровень вложенности меню
-						"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
-						"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
-						"DELAY" => "N",	// Откладывать выполнение шаблона меню
-						"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-					),
-					false
-				);?>
+				<?$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"main-menu", 
+	array(
+		"ROOT_MENU_TYPE" => "main",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MAX_LEVEL" => "2",
+		"CHILD_MENU_TYPE" => "inside",
+		"USE_EXT" => "N",
+		"DELAY" => "Y",
+		"ALLOW_MULTI_SELECT" => "N"
+	),
+	false
+);?>
 			</div>
 		</header>
 		<!-- .header-->
