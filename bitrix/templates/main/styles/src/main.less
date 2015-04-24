@@ -103,7 +103,7 @@ html {
                         ul li {
                             display: inline-block;
                             margin-left: 22px;
-							position: relative;
+                            position: relative;
 
                             a {
                                 color: #000;
@@ -117,35 +117,34 @@ html {
                             .selected { color: #8E351E; }
 
                             .active { color: #8E351E; }
-							
-							.inside-menu {
-								display: none;
-								position: absolute;
-								margin: 0;
-								z-index: 100;
-								background: #e1d2b4;
-								padding: 15px;
-								
-								li{
-									display: block;
-									text-align: left;
-									margin: 0;
-									white-space: nowrap;
-									word-wrap: normal;
-									z-index: 100;
-									a{
-										padding: 11px 0;
-										display: block;
-										z-index: 100;
-									}
-									&:first-child{
-										a{padding-top: 0;}
-									}
-									&:last-child{
-										a{padding-bottom: 0;}
-									}
-								}
-							}
+
+                            .inside-menu {
+                                display: none;
+                                position: absolute;
+                                margin: 0;
+                                z-index: 100;
+                                background: #e1d2b4;
+                                padding: 15px;
+
+                                li {
+                                    display: block;
+                                    text-align: left;
+                                    margin: 0;
+                                    white-space: nowrap;
+                                    word-wrap: normal;
+                                    z-index: 100;
+
+                                    a {
+                                        padding: 11px 0;
+                                        display: block;
+                                        z-index: 100;
+                                    }
+
+                                    &:first-child a { padding-top: 0; }
+
+                                    &:last-child a { padding-bottom: 0; }
+                                }
+                            }
                         }
                     }
                     //main
@@ -477,27 +476,6 @@ html {
                 }
 
                 //main-adventages
-                .right-block {
-                    background: #EDE4D3;
-                    width: 118px;
-                    height: 125px;
-                    position: absolute;
-                    right: 0px;
-                    top: 175px;
-                    text-align: center;
-
-                    a {
-                        color: #000000;
-                        font: 700 16px Ubuntu;
-                        text-transform: uppercase;
-                        vertical-align: middle;
-                        text-decoration: none;
-                        padding: 14px 0;
-                        display: block;
-                    }
-                }
-
-                //right-block
                 .back {
                     font: 400 20px Ubuntu;
                     color: #000000;
@@ -576,6 +554,57 @@ html {
         }
 
         //make-order
+        .right-block {
+            background: #EDE4D3;
+            width: 118px;
+            height: 125px;
+            position: fixed;
+            right: 0px;
+            top: 175px;
+            text-align: center;
+
+            a {
+                color: #000000;
+                font: 700 16px Ubuntu;
+                text-transform: uppercase;
+                vertical-align: middle;
+                text-decoration: none;
+                padding: 14px 0;
+                display: block;
+            }
+        }
+
+        //right-block
+		
+		#right-block-content{
+			position: fixed;
+			z-index: 999;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			width: 600px;
+			height: 600px;
+			padding: 20px;
+			display: none;
+			background: #E1D2B4;
+			
+			.close{
+				right: 20px;
+				top: 20px;
+				position: absolute;
+			}
+			
+			h1{
+				font: 700 28px Ubuntu;
+				text-align: center;
+				padding-top: 16px;
+				padding-bottom: 32px;
+				text-transform: uppercase;
+			}
+		}
+		
         .footer {
             @height: 60px;
             margin: 0 auto;
