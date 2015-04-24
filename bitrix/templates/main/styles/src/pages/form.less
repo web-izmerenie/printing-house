@@ -12,6 +12,8 @@
 	}
 }//close
 
+.form-order .error{position: relative !important;}
+
 .form-order, #call-me{
 	display: none;
 	@width: 660px;
@@ -46,18 +48,22 @@
 		right: 17px;
 	}//close
 	
-	.form-items > li{
+	.form-items{ 
 		display: inline-block;
 		vertical-align: top;
-		margin-bottom: 6px;
-		
-		&:nth-child(7){
-			position: relative;
-			top: -145px;
+		& > li{
+			display: block;
+			margin-bottom: 6px;
 		}
+	}
+	
+	#right-item{
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 30px;
 		
-		&:nth-child(2n + 1){
-			margin-right: 25px;
+		input{
+			display: block;
 		}
 	}
 	
@@ -94,13 +100,13 @@
 		width: 284px;
 		height: 168px;
 		padding-top: 10px;
+		margin-bottom: 5px;
 	}
 	
 	p{
 		color: #8e351e;
 		font: 400 14px / 20px Ubuntu;
 		width: 210px;
-		margin-top: -41px;
 	}
 	
 	input[type="submit"]{

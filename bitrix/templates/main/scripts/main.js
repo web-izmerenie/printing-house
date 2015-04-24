@@ -96,6 +96,49 @@ $(function () {
         });
     }
 	
+	function formOrder(){
+		$('#make-order-form input').click(function(){
+			$(this).removeClass('error-input');
+			$('.error').fadeOut(1000).remove();
+		});
+		
+        $('#make-order-form').submit(function(event){
+            var error = false;
+			
+			function validate(item){
+                if($(item).val() === ''){
+                    error = true;
+					$(item).addClass('error-input');
+                	$(item).after('<span class="error">Вы не ввели ' +$(item).attr('placeholder') + '</span>');
+					$('.error').fadeIn(1000).css({'display':'block'});
+					
+				}
+			}
+			
+			validate('#make-order-form input[name="email"]');
+			validate('#make-order-form input[name="phone"]');
+			 
+            if(error){
+                event.preventDefault();
+            }else{
+                $.ajax({
+                        type: "POST",
+                        url: '/ajax/call_me.php',
+                        data: $(this).serialize()
+                    }).done(function() {
+                        $('#make-order-form').find(".error").remove();
+						$('#make-order-form').css({'padding-left': 0});
+						$('#make-order-form').animate({'height': '165px'}, 1000);
+						$('.form-body').hide();
+                        $('#make-order-form').find('h1').after("<div id='sucsess' class='animated zoomIn'>В течении минуты наш</br> менеджер перезвонит вам</div>");
+                        $('#make-order-form').find("input").val("");
+                        $('#make-order-form').trigger("reset");
+                    });
+                    return false;
+            }
+        });
+    }
+	
 	function menu(){
 		$('#main ul li').hover(function () {
 				clearTimeout($.data(this,'timer'));
@@ -138,6 +181,7 @@ $(function () {
 	}else{
 		menu();
 	}
+	formOrder();
 
 	//init plugins
 	$('#main-slider ul').slick({
@@ -168,6 +212,7 @@ $(function () {
 	}
 	
 	$('select').styler();
+	$('input[type="file"]').styler();
 	$('input[name="phone"]').mask("+7 (999) 999-9999");
 
 });
