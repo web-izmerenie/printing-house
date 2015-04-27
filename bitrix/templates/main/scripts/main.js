@@ -97,47 +97,97 @@ $(function () {
     }
 	
 	function formOrder(){
-		$('#make-order-form input').click(function(){
+		var $form = $('#make-order-form');
+		
+		$form.click(function(){
 			$(this).removeClass('error-input');
 			$('.error').fadeOut(1000).remove();
 		});
 		
-        $('#make-order-form').submit(function(event){
-            var error = false;
+		$('#uploaded_file').change(function(){
+			var filesExt = ['jpg', 'gif', 'png', 'jpeg'];
+			var parts = $(this).val().split('.');
+			var size = this.files[0].size;
 			
-			function validate(item){
-                if($(item).val() === ''){
+			if(filesExt.join().search(parts[parts.length - 1]) != -1){
+				$('#uploaded_file-styler').removeClass('error-input').addClass('good');
+				$('.error-file').fadeOut(1000).remove();
+				
+				if(size > 10485760){
+					error = true;
+					$('#uploaded_file-styler').removeClass('good').addClass('error-input');
+					$('#uploaded_file-styler').after('<span class="error-file">Файл превышает 10Mb</span>');
+					$('.error-file').fadeIn(1000).css({'display':'block'});
+				}
+    		} else {
+				error = true;
+				$('.error-file').remove();
+				$('#uploaded_file-styler').removeClass('good').addClass('error-input');
+				$('#uploaded_file-styler').after('<span class="error-file">Достпные форматы:'+ filesExt +'</span>');
+				$('.error-file').fadeIn(1000).css({'display':'block'});
+    		}
+		});
+		
+		$form.submit(function(e){
+			e.preventDefault();
+			var error = false;
+			var data = new FormData(this);
+			var requireInput = $(this).find(".require");
+			
+            requireInput.each(function(){
+                if($(this).val() === ''){
                     error = true;
-					$(item).addClass('error-input');
-                	$(item).after('<span class="error">Вы не ввели ' +$(item).attr('placeholder') + '</span>');
+					$(this).addClass('error-input');
+                	$(this).after('<span class="error">Вы не ввели ' +$(this).attr('placeholder') + '</span>');
 					$('.error').fadeIn(1000).css({'display':'block'});
 					
 				}
-			}
+            });
 			
-			validate('#make-order-form input[name="email"]');
-			validate('#make-order-form input[name="phone"]');
-			 
-            if(error){
-                event.preventDefault();
+			if(error){
+				e.preventDefault();
+            	return false;
             }else{
-                $.ajax({
-                        type: "POST",
-                        url: '/ajax/call_me.php',
-                        data: $(this).serialize()
-                    }).done(function() {
-                        $('#make-order-form').find(".error").remove();
-						$('#make-order-form').css({'padding-left': 0});
-						$('#make-order-form').animate({'height': '165px'}, 1000);
-						$('.form-body').hide();
-                        $('#make-order-form').find('h1').after("<div id='sucsess' class='animated zoomIn'>В течении минуты наш</br> менеджер перезвонит вам</div>");
-                        $('#make-order-form').find("input").val("");
-                        $('#make-order-form').trigger("reset");
-                    });
-                    return false;
-            }
-        });
-    }
+				var progressBar = $('#progressbar');
+				$('#progressbar').fadeIn(2000);
+				$.ajax({
+					type: "POST",
+					url: "/ajax/order.php",
+					processData: false,  
+					contentType: false, 
+					data: data,
+					xhr: function(){
+        			var xhr = $.ajaxSettings.xhr(); // получаем объект XMLHttpRequest
+        			xhr.upload.addEventListener('progress', function(evt){ // добавляем обработчик события progress (onprogress)
+        			if(evt.lengthComputable) { // если известно количество байт
+            			// высчитываем процент загруженного
+            		var percentComplete = Math.ceil(evt.loaded / evt.total * 100);
+            		// устанавливаем значение в атрибут value тега <progress>
+							// и это же значение альтернативным текстом для браузеров, не поддерживающих <progress>
+						progressBar.val(percentComplete).text('Загружено ' + percentComplete + '%');
+					}
+					}, false);
+        			return xhr;
+    				},
+					success: function (html) {
+						$form.find(".error").remove();
+						$("#progressbar").remove();
+						$form.css({'padding': 0});
+						$form.animate({'height': '165px'}, 1000);
+						$form.find('h1').after("<div id='sucsess' class='animated zoomIn'>В течении минуты наш</br> менеджер перезвонит вам</div>");
+					   $form.find('.form-body').hide();
+					   $form.find("input").val("");
+					   $form.trigger("reset");
+					},
+					error: function () {
+						alert('ошибка отправки');
+					}
+				});
+
+				return false;
+			}
+		});
+	}
 	
 	function menu(){
 		$('#main ul li').hover(function () {
