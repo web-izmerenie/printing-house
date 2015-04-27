@@ -97,14 +97,17 @@ $(function () {
     }
 	
 	function formOrder(){
+		//Оформить заказ
 		var $form = $('#make-order-form');
 		
 		$form.click(function(){
+			//Убираем ошибки если кликнули на input
 			$(this).removeClass('error-input');
 			$('.error').fadeOut(1000).remove();
 		});
 		
 		$('#uploaded_file').change(function(){
+			//валидация файла
 			var filesExt = ['jpg', 'gif', 'png', 'jpeg'];
 			var parts = $(this).val().split('.');
 			var size = this.files[0].size;
@@ -129,6 +132,7 @@ $(function () {
 		});
 		
 		$form.submit(function(e){
+			//валидация формы
 			e.preventDefault();
 			var error = false;
 			var data = new FormData(this);
@@ -148,6 +152,7 @@ $(function () {
 				e.preventDefault();
             	return false;
             }else{
+				//отправка формы
 				var progressBar = $('#progressbar');
 				$('#progressbar').fadeIn(2000);
 				$.ajax({
