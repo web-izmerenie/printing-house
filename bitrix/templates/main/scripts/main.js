@@ -113,19 +113,19 @@ $(function () {
 			var size = this.files[0].size;
 			
 			if(filesExt.join().search(parts[parts.length - 1]) != -1){
-				$('#uploaded_file-styler').removeClass('error-input').addClass('good');
+				$('#uploaded_file-styler').removeClass('error-input-file').addClass('good');
 				$('.error-file').fadeOut(1000).remove();
 				
 				if(size > 10485760){
 					error = true;
-					$('#uploaded_file-styler').removeClass('good').addClass('error-input');
+					$('#uploaded_file-styler').removeClass('good').addClass('error-input-file');
 					$('#uploaded_file-styler').after('<span class="error-file">Файл превышает 10Mb</span>');
 					$('.error-file').fadeIn(1000).css({'display':'block'});
 				}
     		} else {
 				error = true;
 				$('.error-file').remove();
-				$('#uploaded_file-styler').removeClass('good').addClass('error-input');
+				$('#uploaded_file-styler').removeClass('good').addClass('error-input-file');
 				$('#uploaded_file-styler').after('<span class="error-file">Достпные форматы:'+ filesExt +'</span>');
 				$('.error-file').fadeIn(1000).css({'display':'block'});
     		}

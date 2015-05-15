@@ -10,6 +10,7 @@
 @import 'pages/contacts';
 @import 'pages/production';
 @import 'pages/form';
+@import 'pages/technology_view';
 
 * {
     margin: 0;
@@ -179,7 +180,7 @@ html {
                         vertical-align: top;
 
                         a {
-                            width: 200px;
+                            width: 197px;
                             color: #000000;
                             font: 400 15.67px / 19px Ubuntu;
                             display: block;
@@ -189,7 +190,9 @@ html {
                             &:hover {
                                 color: #F15F39;
 
-                                .img .svg { stroke: #F15F39; }
+                                .img .svg { stroke: #F15F39;
+									path{fill:#F15F39;}
+								}
                             }
 
                             .text {

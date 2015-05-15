@@ -11,6 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);?>
+<?if(isset($arResult["ATT_ELEMENTS"])){?>
 <section class="technology_module">
 	<h2><?=$arResult["PROPERTIES"]["ATT_TECHNOLOGY"]["NAME"];?></h2>
 	<ul>
@@ -26,3 +27,5 @@ $this->setFrameMode(true);?>
 <section id="make-order" class="product-order">
 	<a href="#"><span>Оформить заказ</span></a>
 </section>
+<pre><?print_r($arResult["ATT_ELEMENTS"]);?></pre>
+<?}?>

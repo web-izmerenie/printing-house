@@ -16,42 +16,49 @@
             margin-bottom: 48px;
         }
 
-        ul li {
-            color: #000000;
-            font: 400 15.67px / 19px Ubuntu;
-            text-transform: uppercase;
-            display: inline-block;
-            width: 186px;
-            margin-right: 38px;
-            vertical-align: top;
+		ul{
+			display: flex;
+			flex-wrap: wrap;
+			align-content: stretch;
+			align-items: baseline;
+			justify-content: space-around;
+			
+			li {
+				color: #000000;
+				font: 400 15.67px / 19px Ubuntu;
+				text-transform: uppercase;
+				width: 186px;
+				margin-bottom: 20px;
+				vertical-align: top;
 
-            a {
-                text-decoration: none;
-                display: block;
+				a {
+					text-decoration: none;
+					display: block;
 
-                &:hover {
-                    color: #F15F39;
+					&:hover {
+						color: #F15F39;
 
-                    .svg { stroke: #F15F39; }
-                }
+						.svg { stroke: #F15F39; }
+					}
 
-                .svg {
-                    stroke: #000;
-                    max-height: 68px;
-                    min-height: 43px;
-                    width: 80px;
-                    margin-bottom: 5px;
-                    display: block;
-                }
+					.svg {
+						stroke: #000;
+						max-height: 68px;
+						min-height: 43px;
+						width: 80px;
+						margin-bottom: 5px;
+						display: block;
+					}
 
-                p {
-                    color: #5e5e5e;
-                    font: 400 12px / 14px Ubuntu;
-                    text-transform: none;
-                    margin-top: 10px;
-                }
-            }
-        }
+					p {
+						color: #5e5e5e;
+						font: 400 12px / 14px Ubuntu;
+						text-transform: none;
+						margin-top: 10px;
+					}
+				}
+			}
+		}
     }
     //make
 }

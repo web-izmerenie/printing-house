@@ -2,28 +2,28 @@
 $aMenuLinks = Array(
 	Array(
 		"FTP", 
-		"/tipografiya/", 
+		"/upload/Рекомендации по верстке.doc", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Договор с НДС", 
-		"/tekhnologii/", 
+		"/upload/Договор с НДС.pdf", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Договор без НДС", 
-		"/produktsiya/", 
+		"/upload/Договор без НДС.pdf", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Требования к макетам", 
-		"/klientam/", 
+		"/upload/Договор с НДС.pdf", 
 		Array(), 
 		Array(), 
 		"" 

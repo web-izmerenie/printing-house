@@ -1,0 +1,47 @@
+@import '../mixins';
+@import '../variables';
+
+.technology_view{
+	margin-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-right: 65px;
+	list-style: none;
+	
+	li{
+		width: 48%;
+		position: relative;
+		margin-bottom: 38px;
+		max-height: 368px;
+		overflow: hidden;
+		
+		a{
+			color: #ffffff;
+			font: 700 26px Ubuntu;
+			text-transform: uppercase;
+			text-align: center;
+			
+			img{
+				width: 100%;
+				display: block;
+				filter: sepia(25%) contrast(55%);
+			}
+			
+			span{
+				.absoluteCenter();
+				height: 26px;
+			}
+			
+			&:hover{
+				color: #fff;
+				
+				img{
+					opacity: 0.6;
+					transition: opacity 1s ease;
+				}
+			}
+		
+		}
+	}
+}//technology_view
