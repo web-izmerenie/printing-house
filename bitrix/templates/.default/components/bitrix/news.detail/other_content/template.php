@@ -22,6 +22,6 @@ $this->setFrameMode(true);?>
 	<?foreach($arResult['PORFOLIO_PHOTO'] as $photo){
 	$resizePhoto = CFile::ResizeImageGet($photo, array('width'=>500, 'height'=>450), BX_RESIZE_IMAGE_PROPORTIONAL, true);
 	?>
-		<img src="<?=$resizePhoto['src'];?>">
+		<a rel="group" class="fancybox" href="<?=$resizePhoto["src"];?>"><img src="<?=$resizePhoto["src"];?>"></a>
 	<?}?>
 </section>

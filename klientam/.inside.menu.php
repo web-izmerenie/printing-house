@@ -2,9 +2,9 @@
 $aMenuLinks = Array(
 	Array(
 		"FTP", 
-		"/upload/Рекомендации по верстке.doc", 
+		"#ftp", 
 		Array(), 
-		Array(), 
+		Array("class"=>"module-window"), 
 		"" 
 	),
 	Array(

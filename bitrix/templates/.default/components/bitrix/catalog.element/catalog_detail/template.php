@@ -15,7 +15,7 @@ $this->setFrameMode(true);?>
 <section class="portfolio-module-item">
 	<?foreach($arResult["PORTFOLIO"] as $arPortfolio){
 		$resizeImg = CFile::ResizeImageGet($arPortfolio, array('width'=>1024, 'height'=>768), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>
-		<img src="<?=$resizeImg["src"];?>">
+		<a rel="group" class="fancybox" href="<?=$resizeImg["src"];?>"><img src="<?=$resizeImg["src"];?>"></a>
 	<?}?>
 </section>
 <?if(!empty($arResult["PRODUCT_IMG"])){?>

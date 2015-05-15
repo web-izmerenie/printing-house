@@ -1,7 +1,7 @@
 $(function () {
 	
-	function OpenWindow(){
-		$('.module-window').click(function(event){
+	function OpenWindow(openEvent){
+		$(openEvent).click(function(event){
 			event.preventDefault();
 			var target = $(this).attr('href');
 			$('.overlay').fadeIn();
@@ -195,6 +195,7 @@ $(function () {
 	}
 	
 	function menu(){
+		$("a[href^='/klientam/']").attr('href', '#klientam');
 		$('#main ul li').hover(function () {
 				clearTimeout($.data(this,'timer'));
 				$('ul',this).stop(true,true).show().removeClass('flipOutX').addClass('animated flipInX');
@@ -220,16 +221,22 @@ $(function () {
 	$(window).resize(function () {
 		resizeMainPage();
 	});
+	
 	sliderProduct();
+	
 	ankorAnimate();
-	OpenWindow();
+	
+	OpenWindow('.module-window');
+	
 	$('.close').click(function(e){
 		e.preventDefault();
 		CloseWindow();
 	});
+	
 	$('.overlay').click(function(){
 		CloseWindow();
 	});
+	
 	formCall();
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		mobileMenu();
@@ -269,5 +276,13 @@ $(function () {
 	$('select').styler();
 	$('input[type="file"]').styler();
 	$('input[name="phone"]').mask("+7 (999) 999-9999");
+	$(".fancybox").fancybox({
+		padding : 0,
+			helpers: {
+				overlay: {
+					locked: false
+				}
+			}
+	});
 
 });

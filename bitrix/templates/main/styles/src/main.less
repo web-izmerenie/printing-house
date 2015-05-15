@@ -11,6 +11,7 @@
 @import 'pages/production';
 @import 'pages/form';
 @import 'pages/technology_view';
+@import 'fancybox';
 
 * {
     margin: 0;
@@ -45,7 +46,7 @@ html {
             &:hover { color: #F15F39; }
         }
 
-        .svg { stroke: #000; }
+        .svg path { fill: #000; }
 
         .wrapper {
             min-width: 980px;
@@ -398,7 +399,11 @@ html {
                             &:hover {
                                 color: #F15F39;
 
-                                .img .svg { stroke: #F15F39; }
+								.svg path {
+									stroke: #F15F39;
+									fill: #F15F39;
+									rect: #F15F39;
+								}
                             }
 
                             .img {

@@ -36,6 +36,7 @@ $tplPath = "/bitrix/templates/main/";
 	<script src="<?=$tplPath;?>scripts/libs/jquery.collagePlus.js"></script>
 	<script src="<?=$tplPath;?>scripts/libs/jquery.formstyler.min.js"></script>
 	<script src="<?=$tplPath;?>scripts/libs/jquery.maskedinput.min.js"></script>
+	<script src="<?=$tplPath;?>scripts/libs/jquery.fancybox.js"></script>
 	<script src="<?=$tplPath;?>scripts/main.js"></script>
 </head>
 
@@ -69,8 +70,8 @@ $tplPath = "/bitrix/templates/main/";
 					false
 				);?>
 				<?$APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"main-menu", 
+	"bitrix:menu",
+	"main-menu",
 	array(
 		"ROOT_MENU_TYPE" => "main",
 		"MENU_CACHE_TYPE" => "A",

@@ -12,7 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<section id="right-block-content">
+<section class="window" id="<?=$arResult['CODE'];?>">
 	<h1><?=$arResult['NAME'];?></h1>
 	<a class="close" href="#close"></a>
 	<div class="text">

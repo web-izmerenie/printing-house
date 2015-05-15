@@ -40,8 +40,8 @@ $this->setFrameMode(true);?>
 		<?$randPortfolio = array_rand($arResult["PORTFOLIO_RANDOM"], 1);?>
 		<section class="portfolio-module">
 			<?foreach($arResult["PORTFOLIO_RANDOM"][$randPortfolio]["PORTFOLIO"] as $imgPortfolio){
-			$resizePhoto = CFile::ResizeImageGet($imgPortfolio, array('width'=>1024, 'height'=>768), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>
-				<img src="<?=$resizePhoto["src"];?>">
+				$resizePhoto = CFile::ResizeImageGet($imgPortfolio, array('width'=>1024, 'height'=>768), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>
+				<a rel="group" class="fancybox" href="<?=$resizePhoto["src"];?>"><img src="<?=$resizePhoto["src"];?>"></a>
 			<?}?>
 		</section>
 	<?}?>
@@ -124,7 +124,7 @@ $this->setFrameMode(true);?>
 			<section class="portfolio-module">
 				<?foreach($arResult["SECTION"]["PORTFOLIO"] as $arPortfolio){
 				$resizePhoto = CFile::ResizeImageGet($arPortfolio, array('width'=>1024, 'height'=>768), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>
-					<img src="<?=$resizePhoto["src"];?>">
+					<a rel="group" class="fancybox" href="<?=$resizePhoto["src"];?>"><img src="<?=$resizePhoto["src"];?>"></a>
 				<?}?>
 			</section>
 		<?}?>
