@@ -6,42 +6,43 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin-right: 65px;
 	list-style: none;
 	
 	li{
-		width: 48%;
-		position: relative;
-		margin-bottom: 38px;
-		max-height: 368px;
-		overflow: hidden;
+		width: 547px;
+		margin-bottom: 82px;
+		display: flex;
+		flex-wrap: wrap;
 		
-		a{
-			color: #ffffff;
-			font: 700 26px Ubuntu;
-			text-transform: uppercase;
-			text-align: center;
+		@media (max-width: 1200px) {
+      		&{width: 100%;}
 			
-			img{
-				width: 100%;
-				display: block;
-				filter: sepia(25%) contrast(55%);
-			}
+			.text{width: 75% !important;}
+    	}
 			
-			span{
-				.absoluteCenter();
-				height: 26px;
-			}
-			
-			&:hover{
-				color: #fff;
+		.text{
+			width: 319px;
+			margin-left: 26px;
+			color: #000000;
+			font: 400 14px / 22px Ubuntu;
+
+			.name{
+				color: #000000;
+				font: 700 20.85px / 16px Ubuntu;
+				text-transform: uppercase;
+				border-bottom: 1px solid #c2beb2;
+				display: table;
+				padding: 0 0 5px;
+				margin-bottom: 22px;
 				
-				img{
-					opacity: 0.6;
-					transition: opacity 1s ease;
+				&:hover{
+					border: none;
+					padding: 0 0 6px;
 				}
 			}
-		
 		}
+		
+		a{text-decoration: none;}
+		
 	}
 }//technology_view

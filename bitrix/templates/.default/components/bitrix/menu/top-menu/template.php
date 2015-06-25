@@ -4,13 +4,17 @@
 		<ul>
 			<?foreach($arResult as $arItem){?>
 				<li>
-					<a href="<?=$arItem['LINK'];?>" <?if(isset($arItem[ 'PARAMS'][ 'ICON_FILE'])){?>
-						style="background: url('<?=$arItem['PARAMS']['ICON_FILE']?>') no-repeat 0 0;">
-					<?}?>
-					<?=$arItem['TEXT'];?>
-				</a>
+					<a href="<?=$arItem['LINK'];?>" 
+					   <?if(isset($arItem['PARAMS']['CLASS'])){?>
+							class="<?=$arItem['PARAMS']['CLASS'];?>"
+						<?}?>
+					   <?if(isset($arItem['PARAMS']['ICON_FILE'])){?>
+							style="background: url('<?=$arItem['PARAMS']['ICON_FILE']?>') no-repeat 0 0;">
+						<?}?>
+						<?=$arItem['TEXT'];?>
+					</a>
 				</li>
-				<?}?>
+			<?}?>
 		</ul>
 	</nav>
 <?}?>

@@ -15,15 +15,15 @@ $this->setFrameMode(true);
 <?if(!empty($arResult['ITEMS'])){?>
 	<ul class="technology_view">
 		<?foreach($arResult['ITEMS'] as $arItem){
-		$photo = CFile::ResizeImageGet($arItem['PREVIEW_PICTURE'], array('width'=>552, 'height'=>368), BX_RESIZE_IMAGE_EXACT, true);
+		$photo = CFile::ResizeImageGet($arItem['PREVIEW_PICTURE'], array('width'=>202, 'height'=>193), BX_RESIZE_IMAGE_EXACT, true);
 		?>
 			<li>
-				<a href="<?=$arItem['DETAIL_PAGE_URL'];?>">
-					<img src="<?=$photo['src'];?>">
-					<span><?=$arItem['NAME'];?></span>
-				</a>
+				<a href="<?=$arItem['DETAIL_PAGE_URL'];?>"><img src="<?=$photo['src'];?>"></a>
+					<span class="text">
+						<a class="name" href="<?=$arItem['DETAIL_PAGE_URL'];?>"><?=$arItem['NAME'];?></a>
+						<?=$arItem['PREVIEW_TEXT'];?>
+					</span>
 			</li>
 		<?}?>
 	</ul>
 <?}?>
-

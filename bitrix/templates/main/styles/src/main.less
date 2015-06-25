@@ -26,7 +26,7 @@ html {
     body {
         font: 12px/18px Arial, sans-serif;
         height: 100%;
-        background: #f8f6f1;
+        background: #f3eddf;
 
         .overlay {
             background: rgba(0, 0, 0, 0.5);
@@ -42,8 +42,9 @@ html {
 
         a {
             color: #000;
+			outline: none;
 
-            &:hover { color: #F15F39; }
+            &:hover { color: #862000; }
         }
 
         .svg path { fill: #000; }
@@ -55,34 +56,34 @@ html {
             min-height: 100%;
             height: auto !important;
             height: 100%;
-			padding-top: 126px;
+            padding-top: 126px;
 
             .header {
                 height: 90px;
                 padding: 18px 28px;
-				position: fixed;
-				top: 0px;
-				width: 94%;
-				max-width: 1224px;
-				z-index: 900;
-				background: rgba(248, 246, 241, 0.90);
-				min-width: 937px;
+                position: fixed;
+                top: 0px;
+                width: 94%;
+                max-width: 1224px;
+                z-index: 900;
+                background: rgba(243, 237, 223, 0.90);
+                min-width: 937px;
 
                 #main-logo, .logo {
-                    .bg('logo.png', no-repeat 0 0);
+                    .bg('logo_new.png', no-repeat 0 0);
                     float: left;
                     vertical-align: middle;
-                    width: 13%;
-                    height: 95%;
+                    width: 14%;
+                    height: 100%;
                     margin-top: 6px;
                     display: block;
                 }
 
-                .logo:hover { background-position: 0 -86px; }
+                .logo:hover { background-position: 0 -94px; }
 
                 .contenthead {
                     float: right;
-                    width: 87%;
+                    width: 86%;
 
                     #top {
                         text-align: right;
@@ -100,7 +101,7 @@ html {
                                 text-transform: uppercase;
                                 padding-left: 15px;
 
-                                &:hover { color: #F15F39; }
+                                &:hover { color: #862000; }
                             }
                         }
                     }
@@ -121,7 +122,7 @@ html {
                                 text-transform: uppercase;
                                 font: 700 14px Ubuntu;
 
-                                &:hover { color: #F15F39; }
+                                &:hover { color: #862000; }
                             }
 
                             .selected { color: #8E351E; }
@@ -169,8 +170,25 @@ html {
                     margin: 54px 0;
                     position: relative;
                     left: -65px;
-
-                    @media screen and (max-width: 1340px) { left: -30px; }
+					font-size: 0;
+					width: 103%;
+					
+                    @media screen and (max-width: 1340px) { 
+						left: -30px;
+						width: 100%;
+					}
+					
+					a{
+						width: 25%;
+						display: inline-block;
+						
+						img{
+							height: auto;
+							width: 100%;
+							vertical-align: bottom;	
+						}
+					}
+					
                 }
 
                 .catalog-block {
@@ -189,11 +207,13 @@ html {
                             text-transform: uppercase;
 
                             &:hover {
-                                color: #F15F39;
+                                color: #862000;
 
-                                .img .svg { stroke: #F15F39;
-									path{fill:#F15F39;}
-								}
+                                .img .svg {
+                                    stroke: #862000;
+
+                                    path { fill: #862000; }
+                                }
                             }
 
                             .text {
@@ -257,7 +277,7 @@ html {
 
                     &:hover {
                         border: none;
-                        background: #F15F39;
+                        background: #862000;
                         color: #FFF;
                         padding: 3px;
                     }
@@ -273,12 +293,12 @@ html {
                     ul li {
                         list-style: none;
                         position: relative;
-
+					
                         .text {
                             position: absolute;
                             bottom: 0;
                             left: 0;
-                            padding: 19px 0 58px 25px;
+                            padding: 10px 0px 35px 25px;
                             width: 100%;
                             color: #FFF;
                             .bg('slider-text.png', repeat-x);
@@ -343,7 +363,7 @@ html {
                             display: block;
 
                             &:hover {
-                                color: #F15F39;
+                                color: #862000;
 
                                 span { border: none; }
                             }
@@ -381,50 +401,61 @@ html {
 
                 //main-text
                 .main-catalog {
-                    width: 940px;
                     margin: 74px auto 0;
 
-                    ul li {
-                        display: inline-block;
-                        width: 230px;
-                        margin-bottom: 46px;
+                    ul{ 
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: space-between;
+						list-style: outside none none;
+						align-items: baseline;
+						
+						li {
+							width: 25%;
+							margin-bottom: 46px;
+							
+							@media (max-width: 1100px) {
+								width: 26%;
+							}
 
-                        a {
-                            display: block;
-                            color: #000000;
-                            font: 500 15px / 21px Ubuntu;
-                            text-transform: uppercase;
-                            text-decoration: none;
+							a {
+								display: inline-block;
+								color: #000000;
+								font: 500 15px / 21px Ubuntu;
+								text-transform: uppercase;
+								text-decoration: none;
 
-                            &:hover {
-                                color: #F15F39;
+								&:hover {
+									color: #862000;
 
-								.svg path {
-									stroke: #F15F39;
-									fill: #F15F39;
-									rect: #F15F39;
+									.svg path {
+										stroke: #862000;
+										fill: #862000;
+										rect: #862000;
+									}
 								}
-                            }
 
-                            .img {
-                                display: table-cell;
-                                vertical-align: middle;
+								.img {
+									display: table-cell;
+									vertical-align: middle;
+									padding-right: 20px;
 
-                                .svg {
-                                    width: 70px;
-                                    height: 70px;
-                                    stroke: #000;
-                                    margin-bottom: 10px;
-                                }
-                            }
+									.svg {
+										width: 70px;
+										height: 70px;
+										stroke: #000;
+										margin-bottom: 10px;
+									}
+								}
 
-                            span {
-                                width: 56%;
-                                display: inline-block;
-                                vertical-align: middle;
-                            }
-                        }
-                    }
+								span {
+									display: table-cell;
+									vertical-align: middle;
+									width: 165px;
+								}
+							}
+						}
+					}
 
                     .button1 {
                         span {
@@ -503,14 +534,14 @@ html {
                     padding-left: 20px;
                     margin-left: -20px;
 
-                    &:hover { color: #F15F39; }
+                    &:hover { color: #862000; }
                 }
 
                 .prewiev-text {
-                    width: 708px;
+                    width: 920px;
                     color: #000000;
                     font: 500 15px / 24px Ubuntu;
-                    margin: 91px 0px 33px 3px;
+                    margin: 26px 0px 33px 3px;
                 }
 
                 //prewiev-text
@@ -525,7 +556,7 @@ html {
                     margin-top: 13px;
                     margin-bottom: 62px;
 
-                    &:hover { background: #F15F39; }
+                    &:hover { background: #862000; }
                 }
             }
             //content
@@ -555,7 +586,7 @@ html {
                 background: #8E351E;
                 vertical-align: middle;
 
-                &:hover { background: #F15F39; }
+                &:hover { background: #862000; }
 
                 span {
                     margin: auto;
@@ -591,36 +622,35 @@ html {
         }
 
         //right-block
-		
-		#right-block-content{
-			position: fixed;
-			z-index: 999;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			margin: auto;
-			width: 600px;
-			height: 600px;
-			padding: 20px;
-			display: none;
-			background: #E1D2B4;
-			
-			.close{
-				right: 20px;
-				top: 20px;
-				position: absolute;
-			}
-			
-			h1{
-				font: 700 28px Ubuntu;
-				text-align: center;
-				padding-top: 16px;
-				padding-bottom: 32px;
-				text-transform: uppercase;
-			}
-		}
-		
+        .window {
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            width: 600px;
+            height: 600px;
+            padding: 20px;
+            display: none;
+            background: #E1D2B4;
+
+            .close {
+                right: 20px;
+                top: 20px;
+                position: absolute;
+            }
+
+            h1 {
+                font: 700 28px Ubuntu;
+                text-align: center;
+                padding-top: 16px;
+                padding-bottom: 32px;
+                text-transform: uppercase;
+            }
+        }
+
         .footer {
             @height: 60px;
             margin: 0 auto;
@@ -647,7 +677,7 @@ html {
                     vertical-align: middle;
 
                     &:hover {
-                        background: #F15F39;
+                        background: #862000;
                         color: #FFF;
                         padding: 3px;
                         border: none;
@@ -680,7 +710,7 @@ html {
                     }
 
                     &:hover {
-                        color: #F15F39;
+                        color: #862000;
 
                         span { background-position: -16px center !important; }
                     }
@@ -691,4 +721,3 @@ html {
     }
     //body
 }
-//html

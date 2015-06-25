@@ -1,5 +1,4 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Технологии");
 ?><?$APPLICATION->IncludeComponent("bitrix:news.list", "technology_view", Array(
 	"IBLOCK_TYPE" => "content",	// Тип информационного блока (используется только для проверки)
@@ -57,4 +56,4 @@ $APPLICATION->SetTitle("Технологии");
 		"PAGER_SHOW_ALL" => "N",	// Показывать ссылку "Все"
 	),
 	false
-);?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

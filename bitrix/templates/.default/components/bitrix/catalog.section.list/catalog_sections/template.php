@@ -23,6 +23,7 @@ $this->setFrameMode(true);?>
 		<section class="catalog-block">
 			<ul>
 				<?foreach($arResult['SECTIONS'] as $arItem){?>
+					<?if($arItem['ACTIVE'] == 'Y'){?>
 						<li>
 							<a href="<?=$arItem['SECTION_PAGE_URL'];?>">
 								<div class="img">
@@ -35,17 +36,18 @@ $this->setFrameMode(true);?>
 							</a>
 						</li>
 					<?}?>
+				<?}?>
 			</ul>
 		</section>
 		<?$randPortfolio = array_rand($arResult["PORTFOLIO_RANDOM"], 1);?>
 		<section class="portfolio-module">
 			<?foreach($arResult["PORTFOLIO_RANDOM"][$randPortfolio]["PORTFOLIO"] as $imgPortfolio){
-				$resizePhoto = CFile::ResizeImageGet($imgPortfolio, array('width'=>1024, 'height'=>768), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>
-				<a rel="group" class="fancybox" href="<?=$resizePhoto["src"];?>"><img src="<?=$resizePhoto["src"];?>"></a>
+				$resizePhoto = CFile::ResizeImageGet($imgPortfolio, array('width'=>1280, 'height'=>1024), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+				$smalPhoto = CFile::ResizeImageGet($imgPortfolio, array('width'=>405, 'height'=>405), BX_RESIZE_IMAGE_EXACT, true);?>
+				<a rel="group" class="fancybox" href="<?=$resizePhoto["src"];?>"><img src="<?=$smalPhoto["src"];?>"></a>
 			<?}?>
 		</section>
 	<?}?>
-
 	<?if($arResult["SECTION"]["ELEMENT_CNT"] != 0){?>
 		<?$APPLICATION->IncludeComponent(
 			"bitrix:catalog.section",
@@ -120,11 +122,12 @@ $this->setFrameMode(true);?>
 			)
 		);?>
 	<?}?>
-		<?if(!empty($arResult["SECTION"]["PORTFOLIO"])){?>
-			<section class="portfolio-module">
-				<?foreach($arResult["SECTION"]["PORTFOLIO"] as $arPortfolio){
-				$resizePhoto = CFile::ResizeImageGet($arPortfolio, array('width'=>1024, 'height'=>768), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>
-					<a rel="group" class="fancybox" href="<?=$resizePhoto["src"];?>"><img src="<?=$resizePhoto["src"];?>"></a>
-				<?}?>
-			</section>
-		<?}?>
+	<?if(!empty($arResult["SECTION"]["PORTFOLIO"])){?>
+		<section class="portfolio-module">
+			<?foreach($arResult["SECTION"]["PORTFOLIO"] as $arPortfolio){
+			$resizePhoto = CFile::ResizeImageGet($arPortfolio, array('width'=>1024, 'height'=>768), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+			$smalPhoto = CFile::ResizeImageGet($arPortfolio, array('width'=>405, 'height'=>405), BX_RESIZE_IMAGE_EXACT, true);?>
+				<a rel="group" class="fancybox" href="<?=$resizePhoto["src"];?>"><img src="<?=$smalPhoto["src"];?>"></a>
+			<?}?>
+		</section>
+	<?}?>

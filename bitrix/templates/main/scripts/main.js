@@ -260,18 +260,6 @@ $(function () {
 
 	$('.svg').inlineSVG();
 
-	window.onload = function () {
-		
-		$('.portfolio-module').removeWhitespace().collagePlus({
-			'allowPartialLastRow': false,
-			'targetHeight': 450,
-		});
-		
-		$('.portfolio-module-item').removeWhitespace().collagePlus({
-			'allowPartialLastRow': false,
-			'targetHeight': 350
-		});
-	}
 	
 	$('select').styler();
 	$('input[type="file"]').styler();

@@ -12,15 +12,17 @@ gulp.task('clean', function () {
     .pipe(clean());
 });
 
-gulp.task('default', ['clean'], function () {
+gulp.task('styles', ['clean'], function () {
 	gulp.src('bitrix/templates/main/styles/src/**/*.less')
 		.pipe(less())
 		.pipe(concat('common.css'))
 		.pipe(autoprefixer('last 5 versions', '> 1%', 'ie 9'))
-		.pipe(minifyCSS())
+		//.pipe(minifyCSS())
 		.pipe(rename('build.css'))
 		.pipe(gulp.dest('bitrix/templates/main/styles/build/'));
 });
+
+gulp.task('default', ['styles']);
 
 gulp.task('watch', function(){
 	gulp.watch('bitrix/templates/main/styles/src/**/*', ['default']);

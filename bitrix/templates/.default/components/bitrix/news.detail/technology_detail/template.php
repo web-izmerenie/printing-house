@@ -16,9 +16,9 @@ $this->setFrameMode(true);?>
 </section>
 <section class="portfolio-module">
 	<?foreach($arResult["PORFOLIO_PHOTO"] as $photo){
-	$resizePhoto = CFile::ResizeImageGet($photo, array("width"=>1024, "height"=>768), BX_RESIZE_IMAGE_PROPORTIONAL, true);
-	?>
-		<a rel="group" class="fancybox" href="<?=$resizePhoto["src"];?>"><img src="<?=$resizePhoto["src"];?>"></a>
+	$resizePhoto = CFile::ResizeImageGet($photo, array("width"=>1280, "height"=>1024), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+	$smalPhoto = CFile::ResizeImageGet($photo, array('width'=>405, 'height'=>405), BX_RESIZE_IMAGE_EXACT, true);?>
+		<a rel="group" class="fancybox" href="<?=$resizePhoto["src"];?>"><img src="<?=$smalPhoto["src"];?>"></a>
 	<?}?>
 </section>
 <section class="make">

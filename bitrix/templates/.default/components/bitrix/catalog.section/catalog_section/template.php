@@ -31,4 +31,5 @@ if (!empty($arResult['ITEMS']))
 			<?}?>
 		</ul>
 	</section>
+
 <?}?>

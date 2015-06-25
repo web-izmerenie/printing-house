@@ -1,13 +1,6 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"FTP", 
-		"#ftp", 
-		Array(), 
-		Array("class"=>"module-window"), 
-		"" 
-	),
-	Array(
 		"Договор с НДС", 
 		"/upload/Договор с НДС.pdf", 
 		Array(), 

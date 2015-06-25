@@ -12,12 +12,15 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);?>
 <section class="prewiev-text"><?=$arResult["DETAIL_TEXT"];?></section>
-<section class="portfolio-module-item">
-	<?foreach($arResult["PORTFOLIO"] as $arPortfolio){
-		$resizeImg = CFile::ResizeImageGet($arPortfolio, array('width'=>1024, 'height'=>768), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>
-		<a rel="group" class="fancybox" href="<?=$resizeImg["src"];?>"><img src="<?=$resizeImg["src"];?>"></a>
-	<?}?>
-</section>
+<?if(isset($arResult["PORTFOLIO"])){?>
+	<section class="portfolio-module-item">
+		<?foreach($arResult["PORTFOLIO"] as $arPortfolio){
+			$resizeImg = CFile::ResizeImageGet($arPortfolio, array('width'=>1280, 'height'=>1024), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+			$smalPhoto = CFile::ResizeImageGet($arPortfolio, array('width'=>405, 'height'=>405), BX_RESIZE_IMAGE_EXACT, true);?>
+			<a rel="group" class="fancybox" href="<?=$resizeImg["src"];?>"><img src="<?=$smalPhoto["src"];?>"></a>
+		<?}?>
+	</section>
+<?}?>
 <?if(!empty($arResult["PRODUCT_IMG"])){?>
 	<section class="products-block">
 		<h2>Календарные блоки</h2>

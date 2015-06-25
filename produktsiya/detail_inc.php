@@ -63,24 +63,33 @@
 		"MESS_BTN_COMPARE" => "Сравнить"
 	)
 );?><?$APPLICATION->IncludeComponent(
-	"bitrix:catalog.section",
-	"bottom_subitem",
-	Array(
+	"bitrix:catalog.section", 
+	"bottom_subitem", 
+	array(
 		"IBLOCK_TYPE" => "catalog",
 		"IBLOCK_ID" => "5",
 		"SECTION_ID" => "",
 		"SECTION_CODE" => $_REQUEST["SECTION_CODE"],
-		"SECTION_USER_FIELDS" => array(0=>"UF_ICON",1=>"UF_TEXT",2=>"undefined",3=>"",),
+		"SECTION_USER_FIELDS" => array(
+			0 => "UF_ICON",
+			1 => "UF_TEXT",
+			2 => "undefined",
+			3 => "",
+		),
 		"ELEMENT_SORT_FIELD" => "sort",
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_FIELD2" => "id",
 		"ELEMENT_SORT_ORDER2" => "desc",
 		"FILTER_NAME" => "arrFilter",
 		"INCLUDE_SUBSECTIONS" => "A",
-		"SHOW_ALL_WO_SECTION" => "N",
+		"SHOW_ALL_WO_SECTION" => "Y",
 		"PAGE_ELEMENT_COUNT" => "30",
 		"LINE_ELEMENT_COUNT" => "3",
-		"PROPERTY_CODE" => array(0=>"",1=>"undefined",2=>"",),
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "undefined",
+			2 => "",
+		),
 		"OFFERS_LIMIT" => "5",
 		"TEMPLATE_THEME" => "blue",
 		"MESS_BTN_BUY" => "Купить",
@@ -110,7 +119,8 @@
 		"CACHE_FILTER" => "N",
 		"ACTION_VARIABLE" => "action",
 		"PRODUCT_ID_VARIABLE" => "id",
-		"PRICE_CODE" => "",
+		"PRICE_CODE" => array(
+		),
 		"USE_PRICE_COUNT" => "N",
 		"SHOW_PRICE_COUNT" => "1",
 		"PRICE_VAT_INCLUDE" => "Y",
@@ -119,7 +129,8 @@
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
 		"PRODUCT_PROPS_VARIABLE" => "prop",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
-		"PRODUCT_PROPERTIES" => "",
+		"PRODUCT_PROPERTIES" => array(
+		),
 		"DISPLAY_COMPARE" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"DISPLAY_TOP_PAGER" => "N",
@@ -131,6 +142,9 @@
 		"PAGER_SHOW_ALL" => "N",
 		"ADD_PICT_PROP" => "-",
 		"LABEL_PROP" => "-",
-		"MESS_BTN_COMPARE" => "Сравнить"
-	)
+		"MESS_BTN_COMPARE" => "Сравнить",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"PRODUCT_QUANTITY_VARIABLE" => "quantity"
+	),
+	false
 );?>
