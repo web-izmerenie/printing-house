@@ -27,5 +27,4 @@ $this->setFrameMode(true);?>
 <section id="make-order" class="product-order">
 	<a href="#"><span>Оформить заказ</span></a>
 </section>
-<pre><?print_r($arResult["ATT_ELEMENTS"]);?></pre>
 <?}?>

@@ -349,7 +349,7 @@ html {
                     }
 
                     .contacts {
-                        @width: 255px;
+                        @width: 295px;
                         @padding: 37px;
                         @height: 235px;
                         display: inline-block;
@@ -494,35 +494,38 @@ html {
                         margin-left: 29px;
                         color: #ffffff;
                         padding: @padding-top 0 0 @padding-left;
+						a{
+							text-decoration: none;
+							display: block;
+						}//a
 
-                        h1 {
-                            margin: 0;
-                            color: #f8f6f1;
-                            font: 700 21px / 29px Ubuntu;
-                            margin-top: 5px;
-                        }
+						h1 {
+							margin: 0;
+							color: #f8f6f1;
+							font: 700 21px / 29px Ubuntu;
+							margin-top: 5px;
+						}
 
-                        p {
-                            color: #ffffff;
-                            font: 500 17px / 23px Ubuntu;
-                            padding-top: 5px;
-                        }
+						p {
+							color: #ffffff;
+							font: 500 17px / 23px Ubuntu;
+							padding-top: 5px;
+						}
 
-                        &:first-child { .bg('advent1.png', 0 0); }
+						&:first-child { .bg('advent1.png', 0 0); }
 
-                        &:nth-child(2) {
-                            .bg('advent2.png', 0 0);
-                            margin: 0 24px;
-                        }
+						&:nth-child(2) {
+							.bg('advent2.png', 0 0);
+							margin: 0 24px;
+						}
 
-                        &:last-child {
-                            .bg('advent3.png', 0 0);
-                            margin: 0;
-                        }
-                    }
-                }
-
-                //main-adventages
+						&:last-child {
+							.bg('advent3.png', 0 0);
+							margin: 0;
+						}
+					}//li
+                }//main-adventages
+				
                 .back {
                     font: 400 20px Ubuntu;
                     color: #000000;
@@ -622,6 +625,12 @@ html {
         }
 
         //right-block
+		
+		#right-block-content{
+			font-size: 14px;
+			line-height: 1.5;
+		}//right-block-content
+		
         .window {
             position: fixed;
             z-index: 999;

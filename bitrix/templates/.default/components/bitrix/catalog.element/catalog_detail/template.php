@@ -21,6 +21,7 @@ $this->setFrameMode(true);?>
 		<?}?>
 	</section>
 <?}?>
+<!--
 <?if(!empty($arResult["PRODUCT_IMG"])){?>
 	<section class="products-block">
 		<h2>Календарные блоки</h2>
@@ -33,3 +34,4 @@ $this->setFrameMode(true);?>
 		<p><?=$arResult["PROPERTIES"]["ATT_TEXT"]["VALUE"];?></p>
 	</section>
 <?}?>
+-->

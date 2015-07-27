@@ -8,7 +8,7 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Оформить заказ", 
+		"Рассчитать заказ", 
 		"#make-order-form", 
 		Array(), 
 		Array("ICON_FILE"=>"/upload/menu-top2.png", "CLASS"=>"module-window"), 

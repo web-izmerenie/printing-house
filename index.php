@@ -138,12 +138,15 @@ $APPLICATION->SetTitle("Печатный двор");?>
 );?>
 </section> <section id="main-adventages">
 	<ul>
-		<li> <img src="/upload/advent-icon1.png">
-		<h1>Сборный тираж</h1>
-		<p>
-			 возможность<br>
-			 напечатать дешевле!
-		</p>
+		<li>
+			<a class="module-window" href="#right-block-content">
+				<img src="/upload/advent-icon1.png">
+				<h1>Сборный тираж</h1>
+				<p>
+					 возможность<br>
+					 напечатать дешевле!
+				</p>
+			</a>
 		</li>
 		<li> <img src="/upload/advent-icon2.png">
 		<h1>Оперативная <br>

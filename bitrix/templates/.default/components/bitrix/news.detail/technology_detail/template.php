@@ -22,7 +22,7 @@ $this->setFrameMode(true);?>
 	<?}?>
 </section>
 <section class="make">
-	<h2>Офсетная печать применяется в</h2>
+	<h2><?=$arResult['NAME'];?> применяется в</h2>
 	<ul>
 		<?foreach($arResult["ATT_SECTIONS"] as $arItem){?>
 		<li>

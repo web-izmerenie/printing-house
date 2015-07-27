@@ -86,7 +86,7 @@ $(function () {
                     }).done(function() {
                         $('#call-me').find(".error").remove();
 						$('#call-me').animate({'height': '165px'}, 1000);
-                        $('#call-me').find('h1').after("<div id='sucsess' class='animated zoomIn'>В течении минуты наш</br> менеджер перезвонит вам</div>");
+                        $('#call-me').find('h1').after("<div id='sucsess' class='animated zoomIn'>В течении часа наш менеджер свяжется с вами.</div>");
                         $('#call-me').find('input').hide();
                         $('#call-me').find("input").val("");
                         $('#call-me').trigger("reset");
@@ -179,7 +179,7 @@ $(function () {
 						$("#progressbar").remove();
 						$form.css({'padding': 0});
 						$form.animate({'height': '165px'}, 1000);
-						$form.find('h1').after("<div id='sucsess' class='animated zoomIn'>В течении минуты наш</br> менеджер перезвонит вам</div>");
+						$form.find('h1').after("<div id='sucsess' class='animated zoomIn'>В течении дня наш менеджер свяжется с вами.</div>");
 					   $form.find('.form-body').hide();
 					   $form.find("input").val("");
 					   $form.trigger("reset");

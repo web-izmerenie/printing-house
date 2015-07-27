@@ -1,8 +1,8 @@
 <section id="make-order">
-	<a class="module-window" href="#make-order-form"><span>Оформить заказ</span></a>
+	<a class="module-window" href="#make-order-form"><span>Рассчитать заказ</span></a>
 </section>
 <form id="make-order-form" class="form-order" enctype="multipart/form-data" method="POST" action="/ajax/order.php">
-	<h1>Оформить заказ</h1>
+	<h1>Рассчитать заказ</h1>
 	<a class="close" href="#close" title="закрыть"></a>
 	<div class="form-body">
 		<ul class="form-items">
