@@ -12,23 +12,20 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
-if (!empty($arResult['ITEMS']))
-{?>
-	<section class="catalog-block">
-		<ul>
-			<?foreach($arResult["ITEMS"] as $arItem){?>
-				<li>
-					<a href="<?=$arItem["DETAIL_PAGE_URL"];?>">
-						<div class="img">
-							<img class="svg" src="<?=$arItem["ICON"]["SRC"];?>" class="svg">
-						</div>
-						<div class="text">
-							<?=$arItem["NAME"];?>
-							<p><?=$arItem["PREVIEW_TEXT"];?></p>
-						</div>
-					</a>
-				</li>
-			<?}?>
-		</ul>
-	</section>
+if (!empty($arResult['ITEMS'])){?>
+	<?foreach($arResult["ITEMS"] as $arItem){?>
+		<?if(!empty($arItem['PROPERTIES']['ATT_SECTIONS']['VALUE'])){?>
+			<li>
+				<a href="<?=$arItem["DETAIL_PAGE_URL"];?>">
+					<div class="img">
+						<img class="svg" src="<?=$arItem["ICON"]["SRC"];?>" class="svg">
+					</div>
+					<div class="text">
+						<?=$arItem["NAME"];?>
+						<p><?=$arItem["PREVIEW_TEXT"];?></p>
+					</div>
+				</a>
+			</li>
+		<?}?>
+	<?}?>
 <?}?>
