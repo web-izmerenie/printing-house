@@ -1,5 +1,5 @@
 <?php
-$recepient = "sindicat61@yandex.ru";
+$recepient = "andrey.chechkin@web-izmerenie.ru, p-dvor-t@yandex.ru";
 $sitename = "Сообщение с сайте ".$_SERVER['HTTP_HOST'];
 $pagetitle = "Новая заявка с сайта \"$sitename\"";
 

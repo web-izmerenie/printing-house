@@ -3,7 +3,7 @@
 $mail = new PHPMailer(); 
 $mail->From = "no-replay@admin.ru";   
 $mail->FromName = "no-replay"; 
-$mail->AddAddress('sindicat61@yandex.ru');  // кому 
+$mail->AddAddress('andrey.chechkin@web-izmerenie.ru, p-dvor-t@yandex.ru');  // кому 
 $mail->CharSet = 'UTF-8'; 
 $mail->Subject = 'Заявка с сайта'; 
 $mail->Body = implode("\n", $_POST);
