@@ -16,7 +16,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Требования к макетам", 
-		"/upload/Договор с НДС.pdf", 
+		"/upload/Требования к макетам.pdf", 
 		Array(), 
 		Array(), 
 		"" 

@@ -1,4 +1,5 @@
 <?
+$PERM["upload"]["5"]="W";
 $PERM["search"]["5"]="W";
 $PERM["services"]["5"]="W";
 $PERM["news"]["5"]="W";
