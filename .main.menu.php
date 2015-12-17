@@ -34,6 +34,13 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"Тех.требования", 
+		"/upload/Требования к макетам.pdf", 
+		Array(), 
+		Array(), 
+		"" 
 	)
 );
 ?>

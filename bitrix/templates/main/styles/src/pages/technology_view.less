@@ -7,19 +7,19 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	list-style: none;
-	
+
 	li{
 		width: 547px;
 		margin-bottom: 82px;
 		display: flex;
 		flex-wrap: wrap;
-		
+
 		@media (max-width: 1200px) {
       		&{width: 100%;}
-			
+
 			.text{width: 75% !important;}
     	}
-			
+
 		.text{
 			width: 319px;
 			margin-left: 26px;
@@ -28,21 +28,22 @@
 
 			.name{
 				color: #000000;
-				font: 700 20.85px / 16px Ubuntu;
+				font: 700 20.85px Ubuntu;
 				text-transform: uppercase;
 				border-bottom: 1px solid #c2beb2;
-				display: table;
-				padding: 0 0 5px;
-				margin-bottom: 22px;
-				
+
 				&:hover{
 					border: none;
 					padding: 0 0 6px;
 				}
 			}
+
+			p{
+				margin-top: 22px;
+			}
 		}
-		
+
 		a{text-decoration: none;}
-		
+
 	}
 }//technology_view

@@ -21,7 +21,7 @@ $this->setFrameMode(true);
 				<a href="<?=$arItem['DETAIL_PAGE_URL'];?>"><img src="<?=$photo['src'];?>"></a>
 					<span class="text">
 						<a class="name" href="<?=$arItem['DETAIL_PAGE_URL'];?>"><?=$arItem['NAME'];?></a>
-						<?=$arItem['PREVIEW_TEXT'];?>
+						<p><?=$arItem['PREVIEW_TEXT'];?></p>
 					</span>
 			</li>
 		<?}?>

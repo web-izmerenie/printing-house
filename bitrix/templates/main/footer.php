@@ -9,11 +9,9 @@
 			Array(
 			)
 		);?>
-		<?if(!defined('no_content_block')){?>
-			<section class="right-block">
-				<a class="module-window" href="#right-block-content"><img src="<?=$tplPath;?>images/right-block.png">Сборные тиражи</a>
-			</section>
-		<?}?>
+		<section class="right-block">
+			<a class="module-window" href="#right-block-content"><img src="<?=$tplPath;?>images/right-block.png">Сборные тиражи</a>
+		</section>
 		<?$APPLICATION->IncludeComponent(
 			"bitrix:news.detail",
 			"right_block_content",

@@ -1,5 +1,5 @@
 <?define('no_content_block', 'Y');
-require($_SERVER[ "DOCUMENT_ROOT"]. "/bitrix/header.php"); 
+require($_SERVER[ "DOCUMENT_ROOT"]. "/bitrix/header.php");
 $APPLICATION->SetTitle("Печатный двор");?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
@@ -108,8 +108,8 @@ $APPLICATION->SetTitle("Печатный двор");?>
 	)
 );?>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:catalog.section.list", 
-	"main_catalog", 
+	"bitrix:catalog.section.list",
+	"main_catalog",
 	array(
 		"IBLOCK_TYPE" => "catalog",
 		"IBLOCK_ID" => "5",
@@ -148,14 +148,20 @@ $APPLICATION->SetTitle("Печатный двор");?>
 				</p>
 			</a>
 		</li>
-		<li> <img src="/upload/advent-icon2.png">
-		<h1>Оперативная <br>
-		 печать</h1>
+		<li>
+			<a href="/tekhnologii/operativnaya-pechat.html">
+				<img src="/upload/advent-icon2.png">
+				<h1>Оперативная <br>
+				 печать</h1>
+			 </a>
 		</li>
-		<li> <img src="/upload/advent-icon3.png">
-		<h1>ИНТЕРЬЕРНАЯ <br>
-		 И ШИРОКОФОРМАТНАЯ <br>
-		 ПЕЧАТЬ</h1>
+		<li>
+			<a href="/tekhnologii/shirokoformatnaya-pechat.html">
+				<img src="/upload/advent-icon3.png">
+				<h1>ИНТЕРЬЕРНАЯ <br>
+				 И ШИРОКОФОРМАТНАЯ <br>
+				 ПЕЧАТЬ</h1>
+			 </a>
 		</li>
 	</ul>
  </section>
