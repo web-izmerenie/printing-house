@@ -1,8 +1,16 @@
 <?php
-$recepient = "andrey.chechkin@web-izmerenie.ru, p-dvor-t@yandex.ru";
-$sitename = "Сообщение с сайте ".$_SERVER['HTTP_HOST'];
-$pagetitle = "Новая заявка с сайта \"$sitename\"";
+require_once($_SERVER['DOCUMENT_ROOT'].'/PHPMailer/class.phpmailer.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/ajax/config.php');
 
-$message = implode("\n", $_POST);
+$mail = new PHPMailer();
+$mail->From = $config["FROM"];
+$mail->FromName = $config["FROM_NAME"];
+$mail->AddAddress($config["ADRESS"]);  // кому
+$mail->CharSet = 'UTF-8';
+$mail->Subject = "Сообщение с сайта ".$_SERVER['HTTP_HOST'];
+$mail->Body = implode("\n", $_POST);
 
-mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
+//отправить
+if($mail->Send()){
+	echo 'Отправлено';
+}

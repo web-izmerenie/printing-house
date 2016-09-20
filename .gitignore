@@ -20,6 +20,7 @@ bitrix/templates/main/styles/src/sprites
 .source_of_symbolic_links
 robots.txt
 index.html
+yandex_*.html
 
 # bitrix tmp dirs
 bitrix/cache
@@ -71,3 +72,5 @@ bitrix/updates
 
 # upload dir
 upload
+
+ajax/config.php
